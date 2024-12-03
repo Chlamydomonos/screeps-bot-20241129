@@ -1,0 +1,19 @@
+{
+    "name": "@screeps-bot-20241129/tools",
+    "scripts": {
+        "build": "tsc --build"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "dependencies": {
+        "express": "^4.21.1",
+        "chokidar": "^4.0.1",
+        "rimraf": "^6.0.1",
+        "@sequelize/core": "7.0.0-alpha.43",
+        "@sequelize/sqlite3": "7.0.0-alpha.43",
+        "sqlite3": "^5.1.7"
+    }
+}

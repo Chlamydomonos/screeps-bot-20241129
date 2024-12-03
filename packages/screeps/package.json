@@ -1,0 +1,21 @@
+{
+    "name": "@screeps-bot-20241129/screeps",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^28.0.1",
+        "@rollup/plugin-node-resolve": "^15.3.0",
+        "@rollup/plugin-typescript": "^12.1.1",
+        "@types/lodash": "^4.17.13",
+        "@types/screeps": "^3.3.8",
+        "rollup": "^4.27.4",
+        "rollup-plugin-clear": "^2.0.7",
+        "rollup-plugin-copy": "^3.5.0",
+        "rollup-plugin-screeps": "^1.0.1",
+        "@screeps-bot-20241129/eslint-plugin": "workspace:*"
+    },
+    "scripts": {
+        "build": "rollup -c --environment DEST:local",
+        "deploy": "rollup -c --environment DEST:main",
+        "build-only": "rollup -c",
+        "lint": "eslint"
+    }
+}

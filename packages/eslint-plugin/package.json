@@ -1,0 +1,14 @@
+{
+    "name": "@screeps-bot-20241129/eslint-plugin",
+    "dependencies": {
+        "@screeps-bot-20241129/tools": "workspace:*",
+        "@typescript-eslint/utils": "^8.16.0",
+        "axios": "^1.7.8",
+        "synckit": "^0.9.2"
+    },
+    "scripts": {
+        "build": "tsc --build"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+}
