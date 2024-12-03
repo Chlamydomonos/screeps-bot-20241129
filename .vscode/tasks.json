@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "运行代码分析工具",
+            "type": "shell",
+            "command": "if (Test-Path \"./packages/tools/dist/exe/main.js\") { & \"node\" \"./packages/tools/dist/exe/main.js\" } else { Write-Output \"请构建项目以支持代码分析\" }",
+            "windows": {
+                "command": "if (Test-Path \"./packages/tools/dist/exe/main.js\") { & \"node\" \"./packages/tools/dist/exe/main.js\" } else { Write-Output \"请构建项目以支持代码分析\" }"
+            },
+            "presentation": {
+                "reveal": "never"
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        }
+    ]
+}
