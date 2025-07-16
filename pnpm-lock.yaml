@@ -8,15 +8,9 @@ importers:
 
   .:
     devDependencies:
-      '@eslint/js':
-        specifier: ^9.15.0
-        version: 9.31.0
       '@types/node':
         specifier: ^24.0.14
         version: 24.0.14
-      eslint:
-        specifier: ^9.15.0
-        version: 9.31.0
       prettier:
         specifier: ^3.4.1
         version: 3.6.2
@@ -24,11 +18,8 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.8.3
         version: 5.8.3
-      typescript-eslint:
-        specifier: ^8.16.0
-        version: 8.37.0(eslint@9.31.0)(typescript@5.8.3)
 
   packages/eslint-plugin:
     dependencies:
@@ -44,6 +35,16 @@ importers:
       tools:
         specifier: workspace:*
         version: link:../tools
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.31.0
+        version: 9.31.0
+      eslint:
+        specifier: ^9.31.0
+        version: 9.31.0
+      typescript-eslint:
+        specifier: ^8.37.0
+        version: 8.37.0(eslint@9.31.0)(typescript@5.8.3)
 
   packages/screeps:
     dependencies:
@@ -51,6 +52,9 @@ importers:
         specifier: workspace:*
         version: link:../screeps-wasm
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.31.0
+        version: 9.31.0
       '@rollup/plugin-commonjs':
         specifier: ^28.0.1
         version: 28.0.6(rollup@4.45.1)
@@ -66,6 +70,9 @@ importers:
       '@types/screeps':
         specifier: ^3.3.8
         version: 3.3.8
+      eslint:
+        specifier: ^9.31.0
+        version: 9.31.0
       eslint-plugin:
         specifier: workspace:*
         version: link:../eslint-plugin
@@ -81,6 +88,12 @@ importers:
       rollup-plugin-screeps:
         specifier: ^1.0.1
         version: 1.0.1
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+      typescript-eslint:
+        specifier: ^8.37.0
+        version: 8.37.0(eslint@9.31.0)(typescript@5.8.3)
 
   packages/screeps-wasm: {}
 
@@ -105,9 +118,18 @@ importers:
         specifier: ^5.1.7
         version: 5.1.7
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.31.0
+        version: 9.31.0
       '@types/express':
         specifier: ^5.0.0
         version: 5.0.3
+      eslint:
+        specifier: ^9.31.0
+        version: 9.31.0
+      typescript-eslint:
+        specifier: ^8.37.0
+        version: 8.37.0(eslint@9.31.0)(typescript@5.8.3)
 
 packages:
 

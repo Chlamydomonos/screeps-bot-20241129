@@ -2,14 +2,19 @@
     "name": "eslint-plugin",
     "private": true,
     "dependencies": {
-        "tools": "workspace:*",
         "@typescript-eslint/utils": "^8.16.0",
         "axios": "^1.7.8",
-        "synckit": "^0.11.8"
+        "synckit": "^0.11.8",
+        "tools": "workspace:*"
     },
     "scripts": {
         "build": "tsc --build"
     },
     "main": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "types": "./dist/index.d.ts",
+    "devDependencies": {
+        "@eslint/js": "^9.31.0",
+        "eslint": "^9.31.0",
+        "typescript-eslint": "^8.37.0"
+    }
 }
