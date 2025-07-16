@@ -9,5 +9,5 @@
  * 这些导出主要用于ESLint插件和其他需要访问代码分析结果的模块
  */
 
-export { getDBPath } from './lib/getDBPath';
-export type { FullClass, Tag } from './lib/getClassCache';
+export { getDBPath } from './lib/get-db-path';
+export type { FullClass, Tag } from './lib/get-class-cache';

@@ -5,16 +5,10 @@
  * 典型用法包括exportGlobal等全局声明语句。
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, HasMany, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { GlobalStatementTag } from './GlobalStatementTag';
+import { GlobalStatementTag } from './global-statement-tag';
 
 export class GlobalStatement extends Model<InferAttributes<GlobalStatement>, InferCreationAttributes<GlobalStatement>> {
     @Attribute(DataTypes.INTEGER)

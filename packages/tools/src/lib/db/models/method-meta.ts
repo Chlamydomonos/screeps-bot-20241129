@@ -5,16 +5,10 @@
  * 与ClassMeta建立多对一关系，用于组织类的方法结构。
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, BelongsTo, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { ClassMeta } from './ClassMeta';
+import { ClassMeta } from './class-meta';
 
 export class MethodMeta extends Model<InferAttributes<MethodMeta>, InferCreationAttributes<MethodMeta>> {
     @Attribute(DataTypes.INTEGER)

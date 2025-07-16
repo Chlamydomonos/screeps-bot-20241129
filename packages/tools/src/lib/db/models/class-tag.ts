@@ -5,17 +5,11 @@
  * 标签用于为类添加元数据，支持代码生成和验证功能。
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, BelongsTo, HasMany, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { ClassMeta } from './ClassMeta';
-import { ClassTagData } from './ClassTagData';
+import { ClassMeta } from './class-meta';
+import { ClassTagData } from './class-tag-data';
 
 export class ClassTag extends Model<InferAttributes<ClassTag>, InferCreationAttributes<ClassTag>> {
     @Attribute(DataTypes.INTEGER)

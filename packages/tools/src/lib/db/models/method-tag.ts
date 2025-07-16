@@ -5,17 +5,11 @@
  * 支持代码生成和验证功能。
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, BelongsTo, HasMany, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { MethodMeta } from './MethodMeta';
-import { MethodTagData } from './MethodTagData';
+import { MethodMeta } from './method-meta';
+import { MethodTagData } from './method-tag-data';
 
 export class MethodTag extends Model<InferAttributes<MethodTag>, InferCreationAttributes<MethodTag>> {
     @Attribute(DataTypes.INTEGER)

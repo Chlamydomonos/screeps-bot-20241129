@@ -12,19 +12,21 @@
  * - 自动分析文件中的类、方法和标签信息
  * - 生成global.d.ts和manualReset.ts文件
  * - 提供/cache接口供外部查询类信息
+ *
+ * 重构后的架构：
+ * - export-global-processor.ts: 处理exportGlobal解析和代码生成
+ * - web-server.ts: 创建和管理HTTP服务器
  */
 
-import { sql } from '@sequelize/core';
 import chokidar from 'chokidar';
-import express from 'express';
 import path from 'path';
-import { analyzeFile } from '../lib/analyzeFile';
-import { clearItemOfFile } from '../lib/clearItemOfFile';
+import { analyzeFile } from '../lib/analyze-file';
+import { clearItemOfFile } from '../lib/clear-item-of-file';
 import { createDB } from '../lib/db/db';
-import { findAllFiles } from '../lib/findAllFiles';
-import { generateFiles } from '../lib/generateGlobal';
+import { findAllFiles } from '../lib/find-all-files';
 import { SCREEPS_SRC_PATH } from '../lib/paths';
-import { getClassCache } from '../lib/getClassCache';
+import { processExportGlobal } from '../lib/export-global-processor';
+import { createWebServer } from '../lib/web-server';
 
 // chokidar文件监听事件类型定义
 type ChokidarEvent = 'add' | 'addDir' | 'change' | 'unlink' | 'unlinkDir' | 'ready' | 'raw' | 'error';
@@ -36,8 +38,8 @@ type ChokidarEvent = 'add' | 'addDir' | 'change' | 'unlink' | 'unlinkDir' | 'rea
  * 1. 初始化数据库并同步表结构
  * 2. 设置文件监听器，监听源码目录变化
  * 3. 处理文件变化事件（添加、修改、删除）
- * 4. 查询exportGlobal标签并生成全局声明文件
- * 5. 启动HTTP服务器提供API接口
+ * 4. 调用export-global-processor处理exportGlobal标签并生成全局声明文件
+ * 5. 启动web-server提供HTTP API接口
  */
 
 const main = async () => {
@@ -74,49 +76,12 @@ const main = async () => {
                 return;
             }
 
-            // 查询所有带有exportGlobal标签的全局语句
-            const globalCache = (
-                await db.query(sql`
-                    select \`GlobalStatements\`.*
-                    from \`GlobalStatements\` join \`GlobalStatementTags\`
-                    on \`GlobalStatements\`.\`id\` = \`GlobalStatementTags\`.\`globalStatementId\`
-                    where \`GlobalStatementTags\`.\`name\` = "exportGlobal"
-            `)
-            )[0]
-                .map((value) => {
-                    const { text, file } = value as { text: string; file: string };
-                    // 解析exportGlobal语句，提取全局变量名和对应的类名
-                    const match = /exportGlobal\s*\(\s*['"](.+)['"]\s*,\s*(\w+).*\)/.exec(text);
-                    if (!match) {
-                        return undefined;
-                    }
-
-                    return {
-                        key: match[1], // 全局变量名
-                        value: match[2], // 导出的类名
-                        file: `@/${file.replace(/\\/g, '/')}`, // 文件路径（转换为正斜杠）
-                    };
-                })
-                .filter((value) => !!value);
-
-            // 根据解析结果生成全局声明文件
-            generateFiles(globalCache);
+            // 查询exportGlobal标签并生成全局声明文件
+            await processExportGlobal();
         });
 
-    // 启动HTTP服务器
-    const app = express();
-    app.use(express.json());
-
-    // 提供类缓存查询接口，供ESLint插件使用
-    app.post('/cache', async (req, res) => {
-        const { file } = req.body;
-        res.send(await getClassCache(file));
-    });
-
-    // 在25487端口启动服务器
-    app.listen(25487, () => {
-        console.log('app listening on 25487');
-    });
+    // 启动Web服务器
+    createWebServer();
 };
 
 main();

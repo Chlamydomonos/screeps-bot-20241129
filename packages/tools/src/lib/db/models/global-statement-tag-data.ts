@@ -1,22 +1,19 @@
 /**
- * 类标签数据模型
+ * 全局语句标签数据模型
  *
- * 存储类标签的具体数据值，支持有序的参数列表。
+ * 存储全局语句标签的具体数据值，支持有序的参数列表。
  * 通过index字段维护参数的顺序。
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, BelongsTo, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { ClassTag } from './ClassTag';
+import { GlobalStatementTag } from './global-statement-tag';
 
-export class ClassTagData extends Model<InferAttributes<ClassTagData>, InferCreationAttributes<ClassTagData>> {
+export class GlobalStatementTagData extends Model<
+    InferAttributes<GlobalStatementTagData>,
+    InferCreationAttributes<GlobalStatementTagData>
+> {
     @Attribute(DataTypes.INTEGER)
     @PrimaryKey
     @AutoIncrement
@@ -30,7 +27,7 @@ export class ClassTagData extends Model<InferAttributes<ClassTagData>, InferCrea
     @NotNull
     declare tagId: number;
 
-    @BelongsTo(() => ClassTag, {
+    @BelongsTo(() => GlobalStatementTag, {
         foreignKey: 'tagId',
         targetKey: 'id',
         inverse: {
@@ -38,7 +35,7 @@ export class ClassTagData extends Model<InferAttributes<ClassTagData>, InferCrea
             type: 'hasMany',
         },
     })
-    declare tag: NonAttribute<ClassTag>;
+    declare tag: NonAttribute<GlobalStatementTag>;
 
     @Attribute(DataTypes.INTEGER)
     @NotNull

@@ -16,12 +16,12 @@
  */
 
 import { createDB } from './db/db';
-import { ClassMeta } from './db/models/ClassMeta';
-import { ClassTag } from './db/models/ClassTag';
-import { ClassTagData } from './db/models/ClassTagData';
-import { MethodMeta } from './db/models/MethodMeta';
-import { MethodTag } from './db/models/MethodTag';
-import { MethodTagData } from './db/models/MethodTagData';
+import { ClassMeta } from './db/models/class-meta';
+import { ClassTag } from './db/models/class-tag';
+import { ClassTagData } from './db/models/class-tag-data';
+import { MethodMeta } from './db/models/method-meta';
+import { MethodTag } from './db/models/method-tag';
+import { MethodTagData } from './db/models/method-tag-data';
 
 /**
  * 获取类的所有方法及其标签信息

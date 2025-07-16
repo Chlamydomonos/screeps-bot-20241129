@@ -13,6 +13,7 @@
     "scripts": {
         "postinstall": "cd packages/tools && pnpm build && cd ../eslint-plugin && pnpm build && cd ../screeps-wasm && pnpm build",
         "build": "cd packages/tools && pnpm build && cd ../eslint-plugin && pnpm build && cd ../screeps-wasm && pnpm build && cd ../screeps && pnpm build-only",
+        "build-tools": "cd packages/tools && pnpm build",
         "tools": "node ./packages/tools/dist/exe/main.js",
         "build-wasm": "cd packages/screeps-wasm && pnpm build",
         "screeps-local": "cd packages/screeps-wasm && pnpm build && cd ../screeps && pnpm build",

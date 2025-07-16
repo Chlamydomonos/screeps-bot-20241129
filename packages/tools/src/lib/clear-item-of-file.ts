@@ -16,12 +16,12 @@
  */
 
 import { Op } from '@sequelize/core';
-import { ClassMeta } from './db/models/ClassMeta';
-import { ClassTag } from './db/models/ClassTag';
-import { GlobalStatement } from './db/models/GlobalStatement';
-import { ClassTagData } from './db/models/ClassTagData';
-import { GlobalStatementTag } from './db/models/GlobalStatementTag';
-import { GlobalStatementTagData } from './db/models/GlobalStatementTagData';
+import { ClassMeta } from './db/models/class-meta';
+import { ClassTag } from './db/models/class-tag';
+import { GlobalStatement } from './db/models/global-statement';
+import { ClassTagData } from './db/models/class-tag-data';
+import { GlobalStatementTag } from './db/models/global-statement-tag';
+import { GlobalStatementTagData } from './db/models/global-statement-tag-data';
 import path from 'path';
 import { SCREEPS_SRC_PATH } from './paths';
 

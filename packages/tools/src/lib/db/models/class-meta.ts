@@ -13,17 +13,11 @@
  * - 支持跨文件的继承关系解析
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, BelongsTo, HasMany, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { MethodMeta } from './MethodMeta';
-import { ClassTag } from './ClassTag';
+import { MethodMeta } from './method-meta';
+import { ClassTag } from './class-tag';
 
 export class ClassMeta extends Model<InferAttributes<ClassMeta>, InferCreationAttributes<ClassMeta>> {
     @Attribute(DataTypes.INTEGER)

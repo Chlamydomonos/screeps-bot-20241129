@@ -18,18 +18,18 @@ import fs from 'fs';
 import path from 'path';
 import * as ts from 'typescript';
 import { SCREEPS_SRC_PATH } from './paths';
-import { clearItemOfFile } from './clearItemOfFile';
-import { ClassMeta } from './db/models/ClassMeta';
-import { parseComment } from './parseComment';
-import { ClassTag } from './db/models/ClassTag';
-import { ClassTagData } from './db/models/ClassTagData';
-import { MethodMeta } from './db/models/MethodMeta';
-import { MethodTag } from './db/models/MethodTag';
-import { MethodTagData } from './db/models/MethodTagData';
-import { GlobalStatement } from './db/models/GlobalStatement';
-import { GlobalStatementTag } from './db/models/GlobalStatementTag';
-import { GlobalStatementTagData } from './db/models/GlobalStatementTagData';
-import { getDBPath } from './getDBPath';
+import { clearItemOfFile } from './clear-item-of-file';
+import { ClassMeta } from './db/models/class-meta';
+import { parseComment } from './parse-comment';
+import { ClassTag } from './db/models/class-tag';
+import { ClassTagData } from './db/models/class-tag-data';
+import { MethodMeta } from './db/models/method-meta';
+import { MethodTag } from './db/models/method-tag';
+import { MethodTagData } from './db/models/method-tag-data';
+import { GlobalStatement } from './db/models/global-statement';
+import { GlobalStatementTag } from './db/models/global-statement-tag';
+import { GlobalStatementTagData } from './db/models/global-statement-tag-data';
+import { getDBPath } from './get-db-path';
 
 /**
  * 导入项信息接口

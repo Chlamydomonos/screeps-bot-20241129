@@ -5,17 +5,11 @@
  * 用于标识需要特殊处理的全局语句。
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, BelongsTo, HasMany, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { GlobalStatement } from './GlobalStatement';
-import { GlobalStatementTagData } from './GlobalStatementTagData';
+import { GlobalStatement } from './global-statement';
+import { GlobalStatementTagData } from './global-statement-tag-data';
 
 export class GlobalStatementTag extends Model<
     InferAttributes<GlobalStatementTag>,

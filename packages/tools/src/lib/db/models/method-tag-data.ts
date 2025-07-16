@@ -5,16 +5,10 @@
  * 通过index字段维护参数的顺序。
  */
 
-import {
-    CreationOptional,
-    DataTypes,
-    InferAttributes,
-    InferCreationAttributes,
-    Model,
-    NonAttribute,
-} from '@sequelize/core';
+import type { CreationOptional, InferAttributes, InferCreationAttributes, NonAttribute } from '@sequelize/core';
+import { DataTypes, Model } from '@sequelize/core';
 import { Attribute, AutoIncrement, BelongsTo, NotNull, PrimaryKey } from '@sequelize/core/decorators-legacy';
-import { MethodTag } from './MethodTag';
+import { MethodTag } from './method-tag';
 
 export class MethodTagData extends Model<InferAttributes<MethodTagData>, InferCreationAttributes<MethodTagData>> {
     @Attribute(DataTypes.INTEGER)

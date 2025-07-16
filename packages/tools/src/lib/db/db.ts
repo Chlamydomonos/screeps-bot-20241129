@@ -26,15 +26,15 @@ import fs from 'fs';
 import path from 'path';
 import { ROOT_PATH } from '../paths';
 import { rimraf } from 'rimraf';
-import { ClassMeta } from './models/ClassMeta';
-import { MethodMeta } from './models/MethodMeta';
-import { ClassTag } from './models/ClassTag';
-import { ClassTagData } from './models/ClassTagData';
-import { MethodTag } from './models/MethodTag';
-import { MethodTagData } from './models/MethodTagData';
-import { GlobalStatement } from './models/GlobalStatement';
-import { GlobalStatementTag } from './models/GlobalStatementTag';
-import { GlobalStatementTagData } from './models/GlobalStatementTagData';
+import { ClassMeta } from './models/class-meta';
+import { MethodMeta } from './models/method-meta';
+import { ClassTag } from './models/class-tag';
+import { ClassTagData } from './models/class-tag-data';
+import { MethodTag } from './models/method-tag';
+import { MethodTagData } from './models/method-tag-data';
+import { GlobalStatement } from './models/global-statement';
+import { GlobalStatementTag } from './models/global-statement-tag';
+import { GlobalStatementTagData } from './models/global-statement-tag-data';
 
 /**
  * 创建数据库连接
