@@ -1,3 +1,10 @@
+/**
+ * 全局语句标签模型
+ *
+ * 存储全局语句的标签信息，如exportGlobal等特殊标记。
+ * 用于标识需要特殊处理的全局语句。
+ */
+
 import {
     CreationOptional,
     DataTypes,

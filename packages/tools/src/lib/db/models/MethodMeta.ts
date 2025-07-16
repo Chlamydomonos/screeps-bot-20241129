@@ -1,3 +1,10 @@
+/**
+ * 方法元数据模型
+ *
+ * 存储类方法的基本信息，包括方法名和所属类。
+ * 与ClassMeta建立多对一关系，用于组织类的方法结构。
+ */
+
 import {
     CreationOptional,
     DataTypes,

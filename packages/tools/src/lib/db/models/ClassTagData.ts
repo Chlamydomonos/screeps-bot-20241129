@@ -1,3 +1,10 @@
+/**
+ * 类标签数据模型
+ *
+ * 存储类标签的具体数据值，支持有序的参数列表。
+ * 通过index字段维护参数的顺序。
+ */
+
 import {
     CreationOptional,
     DataTypes,
