@@ -13,9 +13,11 @@ export const generateFiles = (globalCache: GlobalItem[]) => {
         fs.mkdirSync(GENERATED_PATH, { recursive: true });
     }
 
-    const globalDTS = globalCache
-        .map((item) => `declare var ${item.key}: import('${item.file}').${item.value} & { __manualReset(): void };`)
-        .join('\n');
+    const globalDTS =
+        '/* eslint-disable @typescript-eslint/consistent-type-imports */\n/* eslint-disable no-var */\n\n' +
+        globalCache
+            .map((item) => `declare var ${item.key}: import('${item.file}').${item.value} & { __manualReset(): void };`)
+            .join('\n');
 
     const manualResetTS1 = globalCache.map((item) => `import '${item.file}';`).join('\n');
 

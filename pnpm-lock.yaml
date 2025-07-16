@@ -46,6 +46,10 @@ importers:
         version: 0.9.2
 
   packages/screeps:
+    dependencies:
+      '@screeps-bot-20241129/screeps-wasm':
+        specifier: workspace:*
+        version: link:../screeps-wasm
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^28.0.1
@@ -77,6 +81,8 @@ importers:
       rollup-plugin-screeps:
         specifier: ^1.0.1
         version: 1.0.1
+
+  packages/screeps-wasm: {}
 
   packages/tools:
     dependencies:

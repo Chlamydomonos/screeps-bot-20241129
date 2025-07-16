@@ -64,7 +64,6 @@ export interface FullClass {
 }
 
 const getParentChain = async (classMeta: ClassMeta) => {
-    console.log('getParentChain');
     const result: FullClass[] = [];
     const visited = new Set<number>();
 

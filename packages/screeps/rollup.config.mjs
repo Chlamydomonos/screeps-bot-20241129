@@ -29,6 +29,10 @@ const pluginDeploy =
                       rename: (name) => name + '.map.js',
                       transform: (contents) => `module.exports = ${contents.toString()};`,
                   },
+                  {
+                      src: '../screeps-wasm/pkg/screeps_wasm_bg.wasm',
+                      dest: config.copyPath,
+                  },
               ],
               hook: 'writeBundle',
               verbose: true,

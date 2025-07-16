@@ -13,7 +13,7 @@ export const parseComment = (fullText: string, node: ts.Node) => {
         const match = /^\s*(?:\/\/|\*)?\s*#(\w+)(\s+.+?)?\s*$/g.exec(line);
         if (match) {
             const name = match[1];
-            const data = match[2]?.match(/\S+/g) ?? [];
+            const data = match[2]?.match(/("([^"]*)")|(\S+)/g) ?? [];
             tags.push({ name, data });
         }
     }

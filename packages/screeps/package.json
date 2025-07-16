@@ -1,5 +1,8 @@
 {
     "name": "@screeps-bot-20241129/screeps",
+    "dependencies": {
+        "@screeps-bot-20241129/screeps-wasm": "workspace:*"
+    },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^28.0.1",
         "@rollup/plugin-node-resolve": "^15.3.0",
