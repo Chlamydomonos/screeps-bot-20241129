@@ -5,7 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 import clear from 'rollup-plugin-clear';
 import copy from 'rollup-plugin-copy';
 import screeps from 'rollup-plugin-screeps';
-import secrets from './secrets.json' assert { type: 'json' };
+import secrets from './secrets.json' with { type: 'json' };
 
 let config;
 
