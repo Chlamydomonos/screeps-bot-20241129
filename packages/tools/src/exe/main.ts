@@ -28,9 +28,6 @@ import { SCREEPS_SRC_PATH } from '../lib/paths';
 import { processExportGlobal } from '../lib/export-global-processor';
 import { createWebServer } from '../lib/web-server';
 
-// chokidar文件监听事件类型定义
-type ChokidarEvent = 'add' | 'addDir' | 'change' | 'unlink' | 'unlinkDir' | 'ready' | 'raw' | 'error';
-
 /**
  * 主函数 - 启动代码分析服务器
  *
@@ -56,7 +53,7 @@ const main = async () => {
             // 忽略generated目录，避免循环生成
             ignored: (p) => path.relative(SCREEPS_SRC_PATH, p).startsWith('generated'),
         })
-        .on('all', async (event: ChokidarEvent, filePath: string) => {
+        .on('all', async (event, filePath) => {
             const fullPath = path.resolve(SCREEPS_SRC_PATH, filePath);
 
             // 处理文件变化事件

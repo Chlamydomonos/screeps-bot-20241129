@@ -1,6 +1,6 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import screeps from '@screeps-bot-20241129/eslint-plugin';
+import screeps from 'eslint-plugin';
 
 export default tseslint.config(eslint.configs.recommended, tseslint.configs.recommended, {
     plugins: {

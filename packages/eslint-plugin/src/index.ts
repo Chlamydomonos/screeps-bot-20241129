@@ -14,7 +14,7 @@ import callSuperRule from './rules/callSuperRule';
  */
 export const plugin = {
     meta: {
-        name: '@screeps-bot-20241129/eslint-plugin',
+        name: 'eslint-plugin',
     },
     rules: {
         // 禁止使用匿名类表达式

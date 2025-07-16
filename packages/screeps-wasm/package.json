@@ -1,5 +1,6 @@
 {
-    "name": "@screeps-bot-20241129/screeps-wasm",
+    "name": "screeps-wasm",
+    "private": true,
     "main": "./pkg/screeps_wasm.js",
     "types": "./pkg/screeps_wasm.d.ts",
     "scripts": {

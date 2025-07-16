@@ -5,7 +5,7 @@
  * 由于Screeps的全局重置机制，需要在每次全局重置后重新加载WASM模块。
  */
 
-import * as wasmModule from '@screeps-bot-20241129/screeps-wasm';
+import * as wasmModule from 'screeps-wasm';
 
 /** WASM模块初始化输出类型 */
 export type WASMInstance = wasmModule.InitOutput;

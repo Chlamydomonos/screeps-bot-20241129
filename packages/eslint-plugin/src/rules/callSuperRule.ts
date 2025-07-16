@@ -6,7 +6,7 @@
 
 import { createSyncFn } from 'synckit';
 import { AST_NODE_TYPES, ESLintUtils, TSESTree } from '@typescript-eslint/utils';
-import { getDBPath, type FullClass } from '@screeps-bot-20241129/tools';
+import { getDBPath, type FullClass } from 'tools';
 
 /**
  * 检查重载方法是否正确调用父类方法的规则

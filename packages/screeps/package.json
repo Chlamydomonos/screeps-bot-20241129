@@ -1,13 +1,14 @@
 {
-    "name": "@screeps-bot-20241129/screeps",
+    "name": "screeps",
+    "private": true,
     "dependencies": {
-        "@screeps-bot-20241129/screeps-wasm": "workspace:*"
+        "screeps-wasm": "workspace:*"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^28.0.1",
-        "@rollup/plugin-node-resolve": "^15.3.1",
+        "@rollup/plugin-node-resolve": "^16.0.1",
         "@rollup/plugin-typescript": "^12.1.1",
-        "@screeps-bot-20241129/eslint-plugin": "workspace:*",
+        "eslint-plugin": "workspace:*",
         "@types/lodash": "^4.17.13",
         "@types/screeps": "^3.3.8",
         "rollup": "^4.27.4",
