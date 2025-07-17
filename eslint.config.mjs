@@ -22,4 +22,5 @@ export default tseslint.config(eslint.configs.recommended, tseslint.configs.reco
         'screeps/no-method-as-property': 'error',
         'screeps/call-super': 'error',
     },
+    files: ['./packages/eslint-plugin/src/**/*.ts', './packages/screeps/src/**/*.ts', './packages/tools/src/**/*.ts'],
 });
