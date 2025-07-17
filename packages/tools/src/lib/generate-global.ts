@@ -58,5 +58,5 @@ export const generateFiles = (globalCache: GlobalItem[]) => {
 
     // 写入生成的文件
     fs.writeFileSync(path.resolve(GENERATED_PATH, 'global.d.ts'), globalDTS);
-    fs.writeFileSync(path.resolve(GENERATED_PATH, 'manualReset.ts'), manualResetTS);
+    fs.writeFileSync(path.resolve(GENERATED_PATH, 'manual-reset.ts'), manualResetTS);
 };

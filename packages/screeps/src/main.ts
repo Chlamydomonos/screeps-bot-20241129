@@ -7,9 +7,9 @@
  * 3. 提供全局工具函数
  */
 
-import '@/generated/manualReset';
-import { initGame } from './global/initGame';
-import { initWasm } from './initWasm';
+import '@/generated/manual-reset';
+import { initGame } from './global/init-game';
+import { initWasm } from './init-wasm';
 
 // 将initGame函数导出到全局作用域，供控制台调用
 (global as any).initGame = initGame;

@@ -5,7 +5,7 @@
  * 避免在单个tick中消耗过多CPU时间。
  */
 
-import { exportGlobal } from '@/base/exportGlobal';
+import { exportGlobal } from '@/base/export-global';
 
 /** 任务函数类型定义 */
 type TaskFunc = (nextTick: (n: () => void) => void) => void;

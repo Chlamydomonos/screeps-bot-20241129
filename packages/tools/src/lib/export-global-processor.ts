@@ -30,11 +30,6 @@ export async function getExportGlobalItems(): Promise<ExportGlobalItem[]> {
                 where: {
                     name: 'exportGlobal',
                 },
-                include: [
-                    {
-                        association: 'data',
-                    },
-                ],
             },
         ],
     });
