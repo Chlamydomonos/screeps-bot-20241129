@@ -1,0 +1,5 @@
+{
+    "cSpell.words": ["heapify", "screeps", "TSES"],
+    "rust-analyzer.linkedProjects": ["packages/screeps-wasm/Cargo.toml"],
+    "eslint.workingDirectories": ["./packages/screeps", "./packages/eslint-plugin", "./packages/tools"]
+}

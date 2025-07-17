@@ -4,9 +4,20 @@
  * @author Chlamydomonos
  */
 
+import path from 'path';
 import { createSyncFn } from 'synckit';
-import { AST_NODE_TYPES, ESLintUtils, TSESTree } from '@typescript-eslint/utils';
+import type { TSESTree } from '@typescript-eslint/utils';
+import { AST_NODE_TYPES, ESLintUtils } from '@typescript-eslint/utils';
 import { getDBPath, type FullClass } from 'tools';
+
+const SCREEPS_SRC_PATH = path.resolve(
+    __dirname /* rules */,
+    '..' /* dist */,
+    '..' /* eslint-plugin */,
+    '..' /* packages */,
+    'screeps',
+    'src'
+);
 
 /**
  * 检查重载方法是否正确调用父类方法的规则
@@ -14,6 +25,12 @@ import { getDBPath, type FullClass } from 'tools';
  */
 export default ESLintUtils.RuleCreator.withoutDocs({
     create(context) {
+        // 如果文件不在SCREEPS_SRC_PATH下，跳过这项检查
+        const currentFilePath = path.resolve(context.physicalFilename);
+        if (!currentFilePath.startsWith(SCREEPS_SRC_PATH)) {
+            return {};
+        }
+
         // 获取文件路径并从代码分析服务器获取类缓存
         const fileName = getDBPath(context.physicalFilename);
         const cache = createSyncFn(require.resolve('../workers/getClassCache'))(fileName) as

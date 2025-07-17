@@ -1,10 +1,15 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import screeps from 'eslint-plugin';
+import { plugin as screeps } from 'eslint-plugin';
 
 export default tseslint.config(eslint.configs.recommended, tseslint.configs.recommended, {
+    languageOptions: {
+        parserOptions: {
+            project: ['./packages/*/tsconfig.json'],
+        },
+    },
     plugins: {
-        screeps: screeps.plugin,
+        screeps,
     },
     rules: {
         'no-unused-private-class-members': 'off',
@@ -17,5 +22,4 @@ export default tseslint.config(eslint.configs.recommended, tseslint.configs.reco
         'screeps/no-method-as-property': 'error',
         'screeps/call-super': 'error',
     },
-    files: ['src/**/*.ts'],
 });
